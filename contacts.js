@@ -23,7 +23,7 @@ async function getContactById(contactId) {
 
   const contact = contacts.find((contact) => contact.id === contactId);
 
-  return contact;
+  return contact || null;
 }
 
 async function removeContact(contactId) {
