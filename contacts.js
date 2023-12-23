@@ -59,6 +59,8 @@ async function addContact(name, email, phone) {
 
   contacts.push(newConatct);
 
+  await writeContacts(contacts);
+
   return newConatct;
 }
 
@@ -73,6 +75,8 @@ async function updateContact(contactId, updateContactData) {
 
   const updatedContact = { ...updateContactData, id: contactId };
   contacts[index] = updatedContact;
+
+  await writeContacts(contacts);
 
   return updatedContact;
 }
